@@ -30,12 +30,22 @@ print(round(pCor, 3))
 print(min(mpg))
 
 dfX = cars[['mpg', 'hp', 'qsec', 'vs']]
-corr = dfX.corr()
+corr = dfX.corr((method ='pearson'))
+corr2 =dfX.corr((method ='kendall'))
+corr3 = dfX.corr((method ='spearman'))
+
 print(corr)
+print(corr2)
+print(corr3)
 
 
-
-
+# Plot
+plt.scatter(mpg, hp)
+plt.xlabel('MPG')
+plt.ylabel('HP')
+plt.title('MPG vs HP')
+plt.show()
+#TODO: Add a correlation matrix
 
 
 
